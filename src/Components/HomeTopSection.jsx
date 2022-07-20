@@ -23,13 +23,14 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { GoTriangleDown } from "react-icons/go";
 import { BsFlagFill } from "react-icons/bs";
 import { GrLocation } from "react-icons/gr";
+import ServicesCategory from "./ServicesCategory";
 
 const HomeTopSection = () => {
   return (
     <Box>
       <Box
         h="36rem"
-        background='linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/urbanclap/image/upload/images/growth/home-screen/1615375782838-f890f8.jpeg")'
+        background='linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url("https://res.cloudinary.com/urbanclap/image/upload/images/growth/home-screen/1615375782838-f890f8.jpeg")'
         backgroundSize={"100%"}
         display="flex"
         flexDirection={"column"}
@@ -146,6 +147,7 @@ const HomeTopSection = () => {
           </Breadcrumb>
         </Container>
       </Box>
+        <ServicesCategory/>
     </Box>
   );
 };
