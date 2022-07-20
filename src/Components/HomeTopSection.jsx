@@ -25,6 +25,31 @@ import { BsFlagFill } from "react-icons/bs";
 import { GrLocation } from "react-icons/gr";
 import ServicesCategory from "./ServicesCategory";
 
+
+
+const cardData = [
+  {
+    logo: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/images/growth/home-screen/1609757635235-1a139e.png",
+    service: "Salon For Women",
+  },
+  {
+    logo: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/images/supply/customer-app-supply/1635331606894-7b633f.png",
+    service: "Hair, Skin & Nails",
+  },
+  {
+    logo: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/categories/category_v2/category_1312fb60.png",
+    service: "Women's Therapies",
+  },
+  {
+    logo: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/images/growth/home-screen/1609757629780-2b2187.png",
+    service: "Salon For Men",
+  },
+  {
+    logo: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/images/growth/home-screen/1609757731250-ba3308.png",
+    service: "Men's Therapies",
+  },
+];
+
 const HomeTopSection = () => {
   return (
     <Box>
@@ -147,7 +172,7 @@ const HomeTopSection = () => {
           </Breadcrumb>
         </Container>
       </Box>
-        <ServicesCategory/>
+        <ServicesCategory data={cardData} />
     </Box>
   );
 };
