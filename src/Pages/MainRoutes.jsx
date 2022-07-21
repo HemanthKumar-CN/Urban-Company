@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Blog from "./Blog";
 import Bookings from "./Bookings";
 import Checkout from "./Checkout";
 import Home from "./Home";
@@ -15,6 +16,7 @@ const MainRoutes = () => {
         <Route path="/city/:id" element={<ServicePage />} />
         <Route path="/city/:id/checkout" element={<Checkout />} />
         <Route path="/bookings" element={<Bookings />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </div>
   );
