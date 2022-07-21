@@ -25,8 +25,6 @@ import { BsFlagFill } from "react-icons/bs";
 import { GrLocation } from "react-icons/gr";
 import ServicesCategory from "../ServicesCategory";
 
-
-
 const cardData = [
   {
     logo: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/images/growth/home-screen/1609757635235-1a139e.png",
@@ -84,11 +82,12 @@ const HomeTopSection = () => {
         <br />
         <br />
         <Container maxW="3xl" lineHeight={"24px"}>
-          <Flex h="60px" justifyContent={"space-between"}>
+          <Flex h="60px" justifyContent={"space-between"} >
             <Flex
               alignItems={"center"}
               bgColor={"whitesmoke"}
               borderRadius="5px"
+              w='25%'
             >
               I
               <Avatar
@@ -101,21 +100,21 @@ const HomeTopSection = () => {
               <Text>Selected Country</Text>
               <Popover isLazy>
                 <PopoverTrigger>
-                  <Button>
+                  <Button bg='whitesmoke'>
                     <GoTriangleDown />
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent mt='3%' w="50vh" h='150px' >
-                  <PopoverHeader fontWeight="semibold">
-                    <Flex justifyContent={"space-around"} alignItems="center">
-                      <GrLocation />
+                <PopoverContent mt="3%" w="50vh" h="150px">
+                  <PopoverHeader fontWeight="semibold" >
+                    <Flex justifyContent={"space-between"} alignItems='center' w='90%'>
+                      <GrLocation mt='-2%' />
                       <Text>Current Location</Text>
                       <Text color="purple.600">detect using gps </Text>
                     </Flex>
                   </PopoverHeader>
-                  <PopoverArrow ml='-10rem' />
+                  <PopoverArrow ml="-8rem" />
                   <PopoverCloseButton />
-                  <PopoverBody mt='3%' h='40%' >
+                  <PopoverBody mt="3%" h="40%">
                     <Flex w="100%" h="100%">
                       <Button
                         borderRadius={"5px 0 0 5px"}
@@ -132,7 +131,7 @@ const HomeTopSection = () => {
                         h="100%"
                         bg="whitesmoke"
                         focusBorderColor="none"
-                        outline='none'
+                        outline="none"
                         placeholder="Search for Society/ Appartment.."
                       />
                     </Flex>
@@ -172,7 +171,7 @@ const HomeTopSection = () => {
           </Breadcrumb>
         </Container>
       </Box>
-        <ServicesCategory data={cardData} />
+      <ServicesCategory data={cardData} />
     </Box>
   );
 };
