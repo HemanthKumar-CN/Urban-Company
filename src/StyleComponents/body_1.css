@@ -38,18 +38,25 @@
 .heading {
   font-family: "Abel", sans-serif;
   color: rgb(181, 177, 177);
-  width: 15rem;
+  width: 25rem;
+  font-size: xx-large;
   letter-spacing: 0.4em;
 }
 
 .subHeading {
-  border: 1px solid red;
-  width: 15rem;
+  /* border: 1px solid red; */
+  width: 25rem;
+
   font-family: "Rubik", sans-serif;
+
   text-align: left;
-  font-size: large;
+  font-size: 2rem;
 }
 
 .exp {
-  font-weight: 400;
+  font-weight: lighter;
+  font-size: 1.5rem;
+  /* padding: 20px; */
+
+  /* border: 1px solid red; */
 }

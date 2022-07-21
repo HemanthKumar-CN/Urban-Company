@@ -7,9 +7,11 @@ import {
 import thunk from "redux-thunk";
 
 import { AppReducer } from "./AppReducer/reducer";
+import { AuthReducer } from "./AuthReducer/reducer";
 
 const rootReducer = combineReducers({
   AppReducer,
+  AuthReducer,
 });
 
 const composeEnhancers =
