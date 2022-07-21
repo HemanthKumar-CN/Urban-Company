@@ -1,7 +1,13 @@
+import { Box, Image } from "@chakra-ui/react";
 import React from "react";
+import mob from "../../assets/mobile.png";
 
 const Body_3 = () => {
-  return <div>Body_3</div>;
+  return (
+    <Box>
+      <Image src={mob} />
+    </Box>
+  );
 };
 
 export default Body_3;

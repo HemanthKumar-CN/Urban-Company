@@ -1,7 +1,10 @@
+import { Box } from "@chakra-ui/react";
 import React from "react";
 
+import LandingPage_Navbar from "../Components/LandingPg_Navbar";
+
 const Bookings = () => {
-  return <div>Bookings</div>;
+  return <LandingPage_Navbar />;
 };
 
 export default Bookings;
