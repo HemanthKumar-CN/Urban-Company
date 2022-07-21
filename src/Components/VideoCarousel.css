@@ -1,0 +1,64 @@
+.carousel {
+    width: 600px;
+    height: 380px;
+    margin: auto;
+  }
+  
+  .carousel-control-prev {
+    height: 300px;
+  }
+  .carousel-control-next {
+    height: 300px;
+  }
+  
+  .carousel .carousel-control-prev-icon {
+    visibility: hidden;
+  }
+  .carousel:hover .carousel-control-prev-icon {
+    visibility: visible;
+  }
+  
+  .carousel .carousel-control-next-icon {
+    visibility: hidden;
+  }
+  .carousel:hover .carousel-control-next-icon {
+    visibility: visible;
+  }
+
+  .container{
+    display: flex;
+    /* height: 600px;
+    width: 100%; */
+    justify-content: center;
+    margin-bottom: 60px;
+    /* padding-top: 30px; */
+    padding-bottom: 10px;
+    border-bottom: solid 2px rgb(72, 71, 71);
+}
+/* helloword */
+#child1{
+           
+            height: 450px;
+            width:800px;
+            font-family:  Open Sans,sans-serif;
+            margin-top: 20px;
+            background-color: white;
+            font-weight: 600;
+            padding-top: 100px;
+            justify-content: left;
+
+            
+
+}
+#child2 {
+  
+            height: 450px;
+            width:750px;
+            background-color:white;
+            color: white;
+            margin-top: 20px;
+            padding-top: 30px;
+            
+            
+
+}
