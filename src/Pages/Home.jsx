@@ -1,8 +1,8 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
-import HomePageNav from "../Components/HomePageNav";
-import HomePageService from "../Components/HomePageService";
-import HomeTopSection from "../Components/HomeTopSection";
+import HomeTopSection from "../Components/homepage/HomeTopSection";
+import HomePageService from "../Components/homepage/HomePageService";
+
 
 const Home = () => {
   return <Box>

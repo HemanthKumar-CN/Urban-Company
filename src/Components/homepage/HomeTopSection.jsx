@@ -23,7 +23,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { GoTriangleDown } from "react-icons/go";
 import { BsFlagFill } from "react-icons/bs";
 import { GrLocation } from "react-icons/gr";
-import ServicesCategory from "./ServicesCategory";
+import ServicesCategory from "../ServicesCategory";
 
 
 

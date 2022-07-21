@@ -7,8 +7,8 @@ import Split from "./Components/Split";
 function App() {
   return (
     <div className="App">
-      {/* <MainRoutes /> */}
-      <Split/>
+      <MainRoutes />
+      {/* <Split/> */}
     </div>
   );
 }
