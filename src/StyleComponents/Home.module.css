@@ -1,0 +1,40 @@
+.zoom {
+  width: 100%;
+  height: auto;
+  overflow:visible;
+  margin-top: 4%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid; */
+  
+}
+.zoom img {
+  height: 150px;
+  width: 90%;
+  object-fit: cover;
+  transition: 0.5s all ease-in-out;
+}
+.zoom:hover img {
+  transform: scale(1.1);
+}
+
+.headings {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  margin: 4% 0 0 0;
+}
+.dividers {
+  height: 1rem;
+  margin-top: 4%;
+  background-color: #ececec;
+  font-size: xl;
+  font-weight: 800;
+}
+.text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #757575;
+}

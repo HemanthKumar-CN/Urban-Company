@@ -5,7 +5,7 @@ import Split from "./Components/Split";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <MainRoutes />
       {/* <Split/> */}
     </div>
