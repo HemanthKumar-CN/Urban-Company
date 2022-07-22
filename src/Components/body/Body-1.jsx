@@ -69,6 +69,7 @@ const Body_1 = () => {
               >
                 <Text>Where do you need a service?</Text>
                 <Select
+                  cursor={"pointer"}
                   placeholder="Select City"
                   value={city}
                   width={"20em"}
@@ -76,7 +77,11 @@ const Body_1 = () => {
                 >
                   {Cities.map((item, index) =>
                     item.city ? (
-                      <option key={index} value={item.city}>
+                      <option
+                        key={index}
+                        style={{ cursor: "pointer" }}
+                        value={item.city}
+                      >
                         {item.city}
                       </option>
                     ) : (
