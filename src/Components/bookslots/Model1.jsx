@@ -4,6 +4,7 @@ import {
   Divider,
   Flex,
   Heading,
+  Image,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -23,6 +24,7 @@ import { AiOutlineCreditCard } from "react-icons/ai";
 import { useState } from "react";
 import styles from "../../StyleComponents/Payment.module.css";
 import { loadData, saveData } from "../../Utils/localstorage";
+import { useNavigate } from "react-router-dom";
 
 const schedule = [
   "10:00 AM",
@@ -35,7 +37,7 @@ const schedule = [
   "05:00 PM",
   "06:00 PM",
 ];
-const days = ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"];
+const days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
 const months = [
   "Jan",
   "Feb",
@@ -60,7 +62,9 @@ let curMonth = "";
 months.map((el, i) => {
   if (i === month) curMonth = el;
 });
+
 const Model1 = () => {
+  const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [modelOpen, setModelOpen] = useState(false);
   const toast = useToast();
@@ -68,6 +72,7 @@ const Model1 = () => {
   const [t, setT] = useState(-1);
   const modelClose = () => {
     setModelOpen(false);
+    navigate("/city");
   };
   const modelOp = () => {
     setModelOpen(true);
@@ -133,8 +138,9 @@ const Model1 = () => {
             <Text>Your service will take approx. 1hr 5 mins</Text>
             <Flex w="35%" mt="2%" justifyContent={"space-between"}>
               {days.map((el, ind) =>
-                ind + 1 === currentDay ? (
+                ind === currentDay ? (
                   <>
+                    {/* first box */}
                     <Box
                       className={`${styles.dateBox} ${
                         trig === date.getDate() ? styles.selected : ""
@@ -146,27 +152,38 @@ const Model1 = () => {
                       <Text>{el}</Text>
                       <Text fontWeight={"bolder"}>{date.getDate()}</Text>
                     </Box>
+
+                    {/* second box */}
                     <Box
                       className={`${styles.dateBox}
                         ${trig === date.getDate() + 1 ? styles.selected : ""}`}
                       onClick={() => {
-                        addDate(date.getDate() + 1, days[ind + 1]);
+                        let d = ind + 1 > 6 ? `${days[0]}` : `${days[ind + 1]}`;
+                        addDate(date.getDate() + 1, d);
                       }}
                     >
                       <Text>
-                        {ind + 1 > 7 ? `${days[0]}` : `${days[ind + 1]}`}
+                        {ind + 1 > 6 ? `${days[0]}` : `${days[ind + 1]}`}
                       </Text>
                       <Text fontWeight={"bolder"}>{date.getDate() + 1}</Text>
                     </Box>
+
+                    {/* third box */}
                     <Box
                       className={`${styles.dateBox}
                         ${trig === date.getDate() + 2 ? styles.selected : ""}`}
                       onClick={() => {
-                        addDate(date.getDate() + 2, days[ind + 2]);
+                        let d =
+                          ind + 2 > 6
+                            ? `${days[6 - ind + 1]}`
+                            : `${days[ind + 2]}`;
+                        addDate(date.getDate() + 2, d);
                       }}
                     >
                       <Text>
-                        {ind + 2 > 7 ? `${days[0]}` : `${days[ind + 2]}`}
+                        {ind + 2 > 6
+                          ? `${days[6 - ind + 1]}`
+                          : `${days[ind + 2]}`}
                       </Text>
                       <Text fontWeight={"bolder"}>{date.getDate() + 2}</Text>
                     </Box>
@@ -225,8 +242,8 @@ const Model1 = () => {
           >
             Payment Successfull
           </ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
+          {/* <ModalCloseButton /> */}
+          <ModalBody color="purple.500">
             <Heading as="h5" size="15px" mb="2%">
               Your Booking Details
             </Heading>
@@ -235,9 +252,13 @@ const Model1 = () => {
             </Text>
             <Text fontWeight={"500"}>Day : {localday}</Text>
             <Text fontWeight={"500"}>Time : {localtime}</Text>
+            <br />
+            <Image src="https://www.sampuranyatra.com/Tour/success.gif" />
           </ModalBody>
           <ModalFooter>
-            <Button onClick={modelClose}>Close</Button>
+            <Button onClick={modelClose} colorScheme="purple">
+              Continue
+            </Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
