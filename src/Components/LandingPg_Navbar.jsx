@@ -49,7 +49,7 @@ const NavLink = ({ children }) => (
   </Link>
 );
 
-export default function Simple() {
+export default function LandingPage_Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -59,6 +59,9 @@ export default function Simple() {
         bg={"blackAlpha.900"}
         color={"whiteAlpha.900"}
         px={4}
+        // paddingRight={"250px"}
+        // marginRight={"20"}
+        w={"100%"}
       >
         <Flex
           h={16}
@@ -81,7 +84,7 @@ export default function Simple() {
             alignItems={"center"}
           >
             <Box>
-              <Go to={"/city"}>
+              <Go to={`/${localStorage.getItem("location")}`}>
                 <Image
                   src="https://res.cloudinary.com/urbanclap/image/upload/images/growth/home-screen/1631097450980-d2de38.png"
                   width={"30%"}
