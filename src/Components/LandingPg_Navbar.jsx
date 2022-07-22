@@ -29,11 +29,6 @@ import { Link as Go } from "react-router-dom";
 import { Login } from "./Login";
 
 // const Links = ["Blog", "Register as Proffessional", "My Bookings"];
-const Links = [
-  { title: "Blog", link: "/blog" },
-  { title: "Register as Proffessional", link: "/" },
-  { title: "My Bookings", link: "/bookings" },
-];
 
 const NavLink = ({ children }) => (
   <Link
@@ -51,6 +46,12 @@ const NavLink = ({ children }) => (
 
 export default function LandingPage_Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const Links = [
+    { title: "Blog", link: "/blog" },
+    { title: "Register as Proffessional", link: "/" },
+    { title: "My Bookings", link: "/bookings" },
+  ];
 
   return (
     <>
