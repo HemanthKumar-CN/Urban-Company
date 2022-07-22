@@ -30,9 +30,9 @@
     /* height: 600px;
     width: 100%; */
     justify-content: center;
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
     /* padding-top: 30px; */
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     border-bottom: solid 2px rgb(72, 71, 71);
 }
 /* helloword */
@@ -62,3 +62,18 @@
             
 
 }
+
+.Service_section{
+  height: 150px;
+  width: 100%;
+display: flex;
+border: 1px solid red;
+} 
+
+/* .Service_section div{
+  height: 150px;
+  width: 100%;
+display: grid;
+grid-template-columns: (1fr,1fr,1fr,1fr,1fr,3fr);
+border: 1px solid rgb(18, 220, 28);
+}  */
