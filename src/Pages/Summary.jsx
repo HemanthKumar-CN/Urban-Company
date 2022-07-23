@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-
+import "../StyleComponents/Summary.css" ;
 const Summary = () => {
 
   const [count, setCount] = useState(0)
