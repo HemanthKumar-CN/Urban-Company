@@ -36,6 +36,12 @@ const HomePageNav = () => {
       h="70px"
       display={"flex"}
       justifyContent="space-around"
+      position={"sticky"}
+      top={0}
+      bg="white"
+      zIndex={1}
+      transition="0.5s all ease-in"
+      opacity={1}
     >
       <Container
         maxW="4xl"
