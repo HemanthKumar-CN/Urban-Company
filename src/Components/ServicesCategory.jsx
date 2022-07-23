@@ -13,6 +13,7 @@ const ServicesCategory = ({data}) => {
       mt="-5%"
       bg="white"
       display="flex"
+      zIndex={-1}
     >
       {data.map((item) => (
         <Button

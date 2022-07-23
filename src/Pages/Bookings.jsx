@@ -1,7 +1,7 @@
 import { Box, Button, Container, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import BookingButton from "../Components/BookingButton";
+// import BookingButton from "../Components/BookingButton";
 
 import LandingPage_Navbar from "../Components/LandingPg_Navbar";
 
@@ -64,7 +64,7 @@ const Bookings = () => {
           BOOK A SERVICE
         </Button>
       </Container>
-      <BookingButton />
+      {/* <BookingButton /> */}
     </Box>
   );
 };
