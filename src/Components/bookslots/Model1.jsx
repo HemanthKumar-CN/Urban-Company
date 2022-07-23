@@ -120,6 +120,9 @@ const Model1 = () => {
   return (
     <>
       <Button
+      w='100%'
+      colorScheme={'purple'}
+      mt='5%'
         onClick={() => {
           setTrig(-1);
           setT(-1);
@@ -129,7 +132,7 @@ const Model1 = () => {
           onOpen();
         }}
       >
-        Trigger modal
+        Book Your Slot
       </Button>
 
       <Modal onClose={onClose} size={"3xl"} isOpen={isOpen} isCentered>

@@ -22,7 +22,7 @@ const Home = () => {
   };
 
   window.addEventListener("scroll", myScrollFunc);
-  console.log(scrollNav, "scroll");
+  
   useEffect(() => {
     if (query === "") {
       setSuggestions([]);
