@@ -1,0 +1,32 @@
+.dateBox {
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  height: 65px;
+  width: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+.scheduleBox {
+  border: 1px solid #ececec;
+  height: 50px;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 5%;
+  cursor: pointer;
+}
+.selected {
+  border: 1px solid purple;
+  color: purple;
+}
+.note {
+  color: gray;
+  height: 40px;
+  background-color: #fbf6f7;
+  justify-content: left;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 300;
+}
