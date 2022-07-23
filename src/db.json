@@ -1,0 +1,35 @@
+{
+    "Service_page_data": [{"Salone_for_men_data":[   {
+        "id": 1,
+        "Title": "Salone For Men",
+        "videos":[{
+            "vid1":"",
+            "vid2":""
+        }],
+        "packages":[{
+            "id":1,
+            "img":"",
+            "para":""
+        }],
+        "packages_components1":[{
+            "id":1,
+            "title":"",
+            "price":"",
+            "time":"",
+            "para":[{
+                "para1":"",
+                "para2":""
+            }]
+        }],
+        "packages_components2":[{
+            "img":"",
+            "title":"",
+            "price":"",
+            "time":"",
+            "para":[{
+                "para1":"",
+                "para2":""
+            }]
+        }]
+ }]}
+ ]}
