@@ -5,7 +5,7 @@ import { Heading } from '@chakra-ui/react'
 export default function PackageContainer2(props) {
   return (
     <div>
-        <div> <div>  <Heading as='h7' size='xs' color="skyblue">
+        <div> <div>  <Heading as='h6' size='xs' color="skyblue">
     Packages
         </Heading>
         <Heading as='h4' size='md' color="skyblue">

@@ -3,7 +3,9 @@ import "./VideoCarousel.css";
 import { Button,Heading} from '@chakra-ui/react'
 import VideoCarousel from './VideoCarousel'
 
-function Split() {
+function Split({title,videos}) {
+  // 
+  // console.log("passesd data- ",title,videos);
   return (
     <div>
      <div className="container">
@@ -14,13 +16,13 @@ function Split() {
   <br/>
   <br/>
     <Heading as='h2' size='2xl'>
-    Salone For Men
+    {title}
   </Heading>
   <br/>
   <p>🌟 4.5(10M)</p>
     </div>
     <div id="child2">
-         <VideoCarousel/>
+    <VideoCarousel videoProperties={videos}/>
       
     </div>
 

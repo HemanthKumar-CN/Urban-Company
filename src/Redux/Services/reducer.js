@@ -1,42 +1,41 @@
-import {
-  SERVICE_FAILURE,
-  SERVICE_REQUEST,
-  SERVICE_SUCCESS,
-} from "./actionTypes";
+import { GET_ALLPRODUCT_DATA_FAILURE, GET_ALLPRODUCT_DATA_REQUEST, GET_ALLPRODUCT_DATA_SUCCESS } from "./action"
 
-const initialState = {
-  isLoading: false,
-  isError: false,
-  services: [],
-};
+const initState = {
+    loading: false,
+    error: false,
+    data: []
+}
 
-export const serviceReducer = (state = initialState, { type, payload }) => {
-  switch (type) {
-    case SERVICE_REQUEST: {
-      return {
-        ...state,
-        isLoading: true,
-      };
+
+export const AllProductsReducer = (state = initState, action) => {
+
+    switch (action.type) {
+
+        case GET_ALLPRODUCT_DATA_REQUEST:
+            return {
+                ...state,
+                loading: true,
+                error: false,
+                data: []
+            }
+
+        case GET_ALLPRODUCT_DATA_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                error: false,
+                data: action.payload
+            }
+
+        case GET_ALLPRODUCT_DATA_FAILURE:
+            return {
+                ...state,
+                loading: false,
+                error: true,
+                data: []
+            }
+
+        default:
+            return state
     }
-
-    case SERVICE_SUCCESS: {
-      return {
-        ...state,
-        services: payload,
-        isLoading: false,
-        isError: false,
-      };
-    }
-
-    case SERVICE_FAILURE: {
-      return {
-        ...state,
-        isError: true,
-      };
-    }
-
-    default: {
-      return state;
-    }
-  }
-};
+}

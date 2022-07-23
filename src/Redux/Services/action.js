@@ -1,40 +1,27 @@
-import axios from "axios";
-import {
-  SERVICE_FAILURE,
-  SERVICE_REQUEST,
-  SERVICE_SUCCESS,
-} from "./actionTypes";
+import axios from 'axios'
 
-export const serviceRequest = () => {
-  return {
-    type: SERVICE_REQUEST,
-  };
-};
+export const GET_ALLPRODUCT_DATA_REQUEST = "GET_ALLPRODUCT_DATA_REQUEST"
+export const GET_ALLPRODUCT_DATA_SUCCESS = "GET_ALLPRODUCT_DATA_SUCCESS"
+export const GET_ALLPRODUCT_DATA_FAILURE = "GET_ALLPRODUCT_DATA_FAILURE"
 
-export const serviceSuccess = (payload) => {
-  return {
-    type: SERVICE_SUCCESS,
-    payload,
-  };
-};
 
-export const serviceFailure = (error) => {
-  return {
-    type: SERVICE_FAILURE,
-    error,
-  };
-};
+export const getAllProductsDataRequest = () => ({
+    type: GET_ALLPRODUCT_DATA_REQUEST
+})
 
-export const servicesData = (payload) => async (dispatch) => {
-  dispatch(serviceRequest());
+export const getAllProductsDataSuccess = (data) => ({
+    type: GET_ALLPRODUCT_DATA_SUCCESS,
+    payload: data
+})
 
-  try {
-    const { data } = await axios.get(
-      ``
-    );
-    console.log(data);
-    dispatch(serviceSuccess(data));
-  } catch (error) {
-    dispatch(serviceFailure(error));
-  }
-};
+export const getAllProductsDataFailure = () => ({
+    type: GET_ALLPRODUCT_DATA_FAILURE
+})
+
+export const getAllProducts = (payload) => (dispatch) => {
+
+    dispatch(getAllProductsDataRequest())
+    axios.get("http://localhost:8080/Service_page_data")
+        .then((res) => { dispatch(getAllProductsDataSuccess(res.data)) })
+        .catch((err) => { dispatch(getAllProductsDataFailure()) })
+}

@@ -1,35 +1,89 @@
 {
-    "Service_page_data": [{"Salone_for_men_data":[   {
-        "id": 1,
-        "Title": "Salone For Men",
-        "videos":[{
-            "vid1":"",
-            "vid2":""
-        }],
-        "packages":[{
-            "id":1,
-            "img":"",
-            "para":""
-        }],
-        "packages_components1":[{
-            "id":1,
-            "title":"",
-            "price":"",
-            "time":"",
-            "para":[{
-                "para1":"",
-                "para2":""
-            }]
-        }],
-        "packages_components2":[{
-            "img":"",
-            "title":"",
-            "price":"",
-            "time":"",
-            "para":[{
-                "para1":"",
-                "para2":""
-            }]
-        }]
- }]}
- ]}
+  "Service_page_data": [
+    {
+      "Salon_for_women_data": [
+        {
+          "id": 1,
+          "Title": "Salon For Women",
+          "videos": [
+            {
+              "id": 1,
+              "vid": "https://www.youtube.com/watch?v=BENmAwUev0Q "
+            },
+            {
+              "id": 2,
+              "vid": "https://www.youtube.com/watch?v=77wWnAJdm8I"
+            }
+          ],
+          "package": [
+            {
+              "id":1,
+              "img": "https://imgs.search.brave.com/AY-WS5mCHxgA5Bkv9bD9iwXbfkKwkoHPcJIEOWbIdIs/rs:fit:1200:800:1/g:ce/aHR0cHM6Ly9taXJv/Lm1lZGl1bS5jb20v/bWF4LzEyMDAvMCp4/OVQtRnhaWWV2dlJm/T3lF",
+              "para": "Packagess"
+            },
+            {
+              "id":2,
+              "img": "https://imgs.search.brave.com/AY-WS5mCHxgA5Bkv9bD9iwXbfkKwkoHPcJIEOWbIdIs/rs:fit:1200:800:1/g:ce/aHR0cHM6Ly9taXJv/Lm1lZGl1bS5jb20v/bWF4LzEyMDAvMCp4/OVQtRnhaWWV2dlJm/T3lF",
+              "para": "Packagess"
+            },
+            {
+              "id":3,
+              "img": "https://imgs.search.brave.com/AY-WS5mCHxgA5Bkv9bD9iwXbfkKwkoHPcJIEOWbIdIs/rs:fit:1200:800:1/g:ce/aHR0cHM6Ly9taXJv/Lm1lZGl1bS5jb20v/bWF4LzEyMDAvMCp4/OVQtRnhaWWV2dlJm/T3lF",
+              "para": "Packagess"
+            }
+          ],
+
+          "packages_components1": [
+            {
+              "id":1,
+              "title": "Complete Chocolate waxing",
+              "price": "₹599",
+              "time": "1 hr 15 mins",
+              "para": [
+                {
+                  "para1": "Full arms (chocolate) + underarms(honey)",
+                  "para2": "Full legs chocolate",
+                  "para3": "Upper lip threading",
+                  "para4": "Eyebrow threading"
+                }
+              ]
+            },
+            {
+              "id":2,
+              "title": "Complete honey waxing",
+              "price": "₹399",
+              "time": "1 hr 10 mins",
+              "para": [
+                {
+                  "para1": "Full legs honey",
+                  "para2": "Honey Full arms + underarms",
+                  "para3": "Upper lip threading",
+                  "para4": "Eyebrow threading"
+                }
+              ]
+            }
+          ],
+          "packages_components2": [
+            {
+              "id":1,
+              "img": "",
+              "title": "Make your own package",
+              "price": "₹399",
+              "time": "2 hrs 20 mins",
+              "para": [
+                {
+                  "para1": "Eyebrow threading",
+                  "para2": "Honey Full arms + underarms",
+                  "para3": "Full legs honey",
+                  "para4": "Upper lip threading",
+                  "para5": "Papaya nourishing cleanup",
+                  "para6": "Cut, file & polish-feet"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
