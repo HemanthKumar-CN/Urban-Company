@@ -1,12 +1,13 @@
 import { useToast } from "@chakra-ui/react";
 import React from "react";
+import { useSelector } from "react-redux";
 // import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { loadData, saveData } from "../Utils/localstorage";
 
 const ReqAuth = ({ children }) => {
-//   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
-const isAuth = loadData("_grecaptcha") || null
+  const {isAuth} = useSelector((state) => state.AuthReducer);
+// const isAuth = loadData("_grecaptcha") || null
 //   console.log(isAuth, "auth...");
   const toast = useToast(); 
     

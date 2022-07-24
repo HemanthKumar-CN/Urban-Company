@@ -70,7 +70,9 @@ const HomeTopSection = ({ loading, setLoading, onChange, suggestions }) => {
   //   onChange("");
   //   setLoading(false);
   // };
-
+  const handleClick=(index)=>{
+    
+  }
   const searchResult = (item) => {
     console.log(item);
   };
@@ -198,7 +200,10 @@ const HomeTopSection = ({ loading, setLoading, onChange, suggestions }) => {
                     key={index}
                     _hover={{ bgColor: "purple.100" }}
                     className={styles.suggestions}
-                    onClick={() => searchResult(item)}
+                    onClick={() => {
+                      searchResult(item)
+                      handleClick(index)
+                    }}
                   >
                     {item}
                   </Box>
