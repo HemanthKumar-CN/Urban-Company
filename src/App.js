@@ -3,7 +3,7 @@ import "./App.css";
 // import List from "./Components/Service_pages/List";
 // import MainRoutes from "./Pages/MainRoutes";
 import ServicePage from "./Pages/ServicePage";
-import Summary from "./Pages/Summary";
+// import Summary from "./Pages/Summary";
 // import Split from "./Components/Split";
 
 function App() {
