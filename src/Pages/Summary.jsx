@@ -1,203 +1,156 @@
-import React from 'react'
-import { useState } from 'react'
+import React from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Model1 from "../Components/bookslots/Model1";
+import styles from "../StyleComponents/Services.module.css";
 
 const Summary = () => {
+  const navigate = useNavigate();
+  const [count, setCount] = useState(0);
+  const [price, setPrice] = useState(553);
 
-  const [count, setCount] = useState(0)
-   const handleCount= ()=> {
-    setCount(true)
-   }  
-
-
+  const handleProcced = () => {
+    navigate("/:city/summary/checkout");
+  };
   return (
-        <div className='container'>
-          <div className='header'>
-               <div className='img'>
-               <img id='img' src="https://fontawesomeicons.com/images/svg/arrow-back.svg" alt="arrow.png" />
-               </div>
-               <div className='title'>
-               <h3 id='head'>Summary</h3>
-               </div>
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <div className={styles.img}>
+          <img
+            style={{ height: "50px" }}
+            id="img"
+            src="https://fontawesomeicons.com/images/svg/arrow-back.svg"
+            alt="arrow.png"
+          />
+        </div>
+        <div>
+          <h1 style={{ fontSize: "50px" }}>Summary</h1>
+        </div>
+      </div>
+      <hr />
+      <div className={styles.heading}>
+        <div className={styles.text}>
+          {/* text */}
+          <div className={styles.textp}>
+            <div className={styles.text1}>
+              <p>Haircut + Beard Grooming + Massage</p>
+            </div>
+            <div className={styles.counter}>
+              {count === 0 ? (
+                <button
+                  className={styles.addCartItem}
+                  onClick={() => setCount((prev) => prev + 1)}
+                >
+                  ADD
+                </button>
+              ) : (
+                <div className={styles.addCartItem}>
+                  <button
+                    disabled={count === 1}
+                    onClick={() => setCount((prev) => prev - 1)}
+                  >
+                    -
+                  </button>
+                  <button>{count}</button>
+                  <button onClick={() => setCount((prev) => prev + 1)}>
+                    +
+                  </button>
+                </div>
+              )}
+            </div>
+            <p>₹{price * count}</p>
           </div>
           <hr />
-          <div className='heading'>
-            <div className='text'>
-              {/* text */}
-              <div className='textp'>
-              <div className='text1'>
-              <p>Haircut + Beard Grooming + Massage</p>
-              </div>
-              <div className='counter'>
-              {count === 0 ? (
-            <button className="addCartItem" onClick={() => setCount(1)}>
-              ADD
-             </button>
-          ) : (
-            <div className="addCartItem">
-              <button  onClick={() => handleCount(-1)}>-</button>
-              <button  >{count}</button>
-              <button   onClick={() => handleCount(1)}>+</button>
-            </div>
-          )}
+          <div className={styles.list}>
+            <ul>
+              <li>Men's Haircut x1</li>
+              <li>Beard Shape & Style x1</li>
+              <li>10 min Head Massage x1</li>
+            </ul>
+          </div>
 
-              </div>
-              <p>₹549</p>
-              </div>
-              <hr />
-              <div className='list'>
-                <ul>
-                  <li>Men's Haircut x1</li>
-                  <li>Beard Shape & Style x1</li>
-                  <li>10 min Head Massage x1</li>
-                </ul>
-
-              </div>
-              <div className='edit'>
-                <button id='edit' >Edit Package</button>
-
-              </div>
-
-              <div className='member'>
-                <div className='member1'>
-                <h3>Plus Membership</h3>
-                </div>
-                <div className='cover'>
-                <div className='months'>
-                   <p>12 months</p>
-                </div>
-                <div className='add'>
-                    <button className='add' >Add</button>
-                    </div>
-                   
-                    </div>
-
-                  {/* <div className='container1'>
-                        
-
-
-                  </div>
-                     */}
-                       <div>
-          <h3>Frequently added together</h3>
-          <div className="suggetions">
+          <div className={styles.member}>
+            {/*  */}
             <div>
-              <img
-                src="https://res.cloudinary.com/urbanclap/image/upload//t_medium_res_category//categories/category_v2/category_f7d85a20.jpeg"
-                alt=""
-              />
-              <p>Head Massage Head Massage</p>
-              <p style={{ fontWeight: "500", marginTop: "15px" }}>₹000</p>
-              <div className="button">
-                {count === 0 ? (
-                  <button className="addToCartItem1" onClick={() => setCount(1)}>
-                    ADD
-                    <strong
-                      style={{
-                        width: "20px",
-                        background: "#EFF1FF",
-                        marginLeft: "10px",
-                      }}
-                    >
-                      +
-                    </strong>
-                  </button>
-                ) : (
-                  <div className="addedToCartItem1">
-                    <button onClick={() => handleCount(-1)}>-</button>
-                    <button>{count}</button>
-                    <button onClick={() => handleCount(1)}>+</button>
-                  </div>
-                )}
+              <h2 style={{ fontSize: "20px", width: "50%", margin: "2%" }}>
+                Frequently added together
+              </h2>
+              <div className={styles.suggetions}>
+                <div>
+                  <img
+                    src="https://res.cloudinary.com/urbanclap/image/upload//t_medium_res_category//categories/category_v2/category_f7d85a20.jpeg"
+                    alt=""
+                  />
+                  {/* <p>Head Massage Head Massage</p> */}
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        {/* PAYMENT SECTION RIGHT SIDE BOX */}
 
-                
-                 
-
-              </div>
-            </div>
-              <div className='payment'>
-                <div className='phead'>
-                  <h3>Payment Summary</h3>
-                </div>
-                  <div className='pitem'>
-                   
-                  <div className='itotal'>Item total</div>
-                    <div className='itotalprice'>item total price</div> 
-
-  
-                  </div>
-                  <div className='pitem'>
-                   
-                  <div className='itotal'>Membership Discount</div>
-                    <div className='itotalprice'>-₹83</div> 
-
-  
-                  </div>
-                  <div className='pitem'>
-                   
-                  <div className='itotal'>Convenience fee</div>
-                    <div className='itotalprice'>₹49</div> 
-
-  
-                  </div>
-                  <div className='pitem'>
-                   
-                  <div className='itotal'>Plus Membership</div>
-                    <div className='itotalprice' >
-                      ₹999 ₹299
-                      </div> 
-
-  
-                  </div>
-                  <hr />
-                  <div className='pitem'>
-                   
-                   <div className='itotal'>Total</div>
-                     <div className='itotalprice' >
-                       Totalprice
-                       </div> 
- 
-   
-                   </div>
-
-                   <div  className='bottom'>
-                       <p id='bottom'>Yay! You have saved ₹783 on final bill </p>
-                   </div>
-                       <hr />
-
-                             <div className='blank'></div>
-
-                       <div className='offers'>
-                            <div className='img'>
-                              <img id="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5SxrkEmZkOPbrpX7JME9ZGAxOo9gD3CShd9z2ZqxGsMQc0MlkX_9MQu2xsP76kV0-MEc&usqp=CAU" alt="" />
-                               </div>
-                               <div className='text1'>
-                                   <p>Coupons and offers
-                                   Login/Sign up to view offers
-                                   </p>
-                                   <p></p>
-                               </div>
-                       </div>
-                       
-                       <div className='blank'></div>
-
-                       <hr />
-                      <div className='loginsignup'>
-                          <button id='loginsignup'>Login/signup to proceed</button>
-                      </div>
-
-
-                </div>
+        <div className={styles.payment}>
+          <div className={styles.phead}>
+            <h3>Payment Summary</h3>
           </div>
-     </div>
-      
-    
-  )
+          <div className={styles.pitem}>
+            <div className={styles.itotal}>Item total</div>
+            <div className={styles.itotalprice}>₹{price * count}</div>
+          </div>
 
-}
+          <div className={styles.pitem}>
+            <div className={styles.itotal}>Convenience fee</div>
+            <div className={styles.itotalprice}>₹49</div>
+          </div>
 
-export default Summary
+          <hr style={{ marginTop: "2%" }} />
+          <div className={styles.pitem}>
+            <div className={styles.itotal}>Total</div>
+            <div className={styles.itotalprice}>₹{price * count + 49}</div>
+          </div>
+
+          <hr style={{ marginTop: "2%" }} />
+
+          <div className={styles.blank}></div>
+
+          <div className={styles.offers}>
+            <div className={styles.img}>
+              <img
+                id="img1"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5SxrkEmZkOPbrpX7JME9ZGAxOo9gD3CShd9z2ZqxGsMQc0MlkX_9MQu2xsP76kV0-MEc&usqp=CAU"
+                alt=""
+              />
+            </div>
+            <div className={styles.text1}>
+              <p>Coupons and offers Login/Sign up to view offers</p>
+              <p></p>
+            </div>
+          </div>
+
+          <div className={styles.blank}></div>
+
+          <hr />
+          <div className={styles.loginsignup}>
+            <button
+              style={{
+                border: "1px solid #6e7dff",
+                fontSize: "20px",
+                marginTop: "5%",
+                borderRadius: "10px",
+                padding: "5px",
+                backgroundColor: "#6e7dff",
+                color: "white",
+              }}
+              onClick={handleProcced}
+            >
+              Procced to Checkout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Summary;

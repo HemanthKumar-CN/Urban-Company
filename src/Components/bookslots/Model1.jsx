@@ -14,6 +14,7 @@ import {
   ModalOverlay,
   SimpleGrid,
   Text,
+  Textarea,
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
@@ -70,6 +71,17 @@ const Model1 = () => {
   const toast = useToast();
   const [trig, setTrig] = useState(-1);
   const [t, setT] = useState(-1);
+  const [address, setAddress] = useState("");
+  const [open, setOpen] = useState(false);
+  const addAddress = () => {
+    const obj = {
+      address,
+    };
+    saveData("address", obj);
+    setOpen(false);
+  };
+  
+  const currAddress=loadData("address") || null
   const modelClose = () => {
     setModelOpen(false);
     navigate("/city");
@@ -108,26 +120,70 @@ const Model1 = () => {
   return (
     <>
       <Button
+      w='100%'
+      colorScheme={'purple'}
+      mt='5%'
         onClick={() => {
           setTrig(-1);
           setT(-1);
           saveData("bookDate", "");
           saveData("time", "");
+          saveData("address","")
           onOpen();
         }}
       >
-        Trigger modal
+        Book Your Slot
       </Button>
 
       <Modal onClose={onClose} size={"3xl"} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
-            <Flex justifyContent={"space-between"}>
-              <FaHome color="purple" />
-              <Text m={"1rem 24rem 0 0"}>Home- selected city</Text>
-              <FaAngleRight />
-            </Flex>
+            {currAddress ? (
+              <>
+                <Flex
+                  justifyContent={"space-between"}
+                  alignItems="center"
+                  w="90%"
+                >
+                  <Flex>
+                    <FaHome color="purple" />
+                    <Text mt="10%" fontSize={"lg"}>
+                      {currAddress.address}
+                    </Text>
+                  </Flex>
+                  <Button
+                    onClick={() => setOpen(true)}
+                    fontWeight={"extrabold"}
+                    fontSize={"bolder"}
+                    size={"sm"}
+                    mt="2%"
+                    colorScheme={"green"}
+                  >
+                    +
+                  </Button>
+                </Flex>
+              </>
+            ) : (
+              <Button
+                colorScheme={"purple"}
+                mt="1%"
+                onClick={() => setOpen(true)}
+              >
+                Add Adress
+              </Button>
+            )}
+            {open ? (
+              <>
+                <Textarea
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                ></Textarea>
+                <Button colorScheme={"purple"} mt="1%" onClick={addAddress}>
+                  Add
+                </Button>
+              </>
+            ) : null}
             <Divider mt="1%" />
           </ModalHeader>
           <ModalCloseButton />
@@ -247,6 +303,7 @@ const Model1 = () => {
             <Heading as="h5" size="15px" mb="2%">
               Your Booking Details
             </Heading>
+            <Text fontWeight={"500"}>Address : {currAddress?.address}</Text>
             <Text fontWeight={"500"}>
               Date of Booking : {`${localdate} ${curMonth} `}
             </Text>

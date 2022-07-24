@@ -1,8 +1,12 @@
-import { Avatar, Box, Button, Container, Image, Text } from "@chakra-ui/react";
+import { Button, Container, Image, Text } from "@chakra-ui/react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-
-const ServicesCategory = ({data}) => {
+const ServicesCategory = ({ data }) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/:city/services");
+  };
   return (
     <Container
       border="1px solid white"
@@ -13,6 +17,7 @@ const ServicesCategory = ({data}) => {
       mt="-5%"
       bg="white"
       display="flex"
+      zIndex={-1}
     >
       {data.map((item) => (
         <Button
@@ -22,8 +27,9 @@ const ServicesCategory = ({data}) => {
           display="flex"
           flexDirection={"column"}
           justifyContent="space-around"
-          fontSize={'15px'}
+          fontSize={"15px"}
           key={item.service}
+          onClick={handleClick}
         >
           <Image src={item.logo} name={item.service} borderRadius />
           <Text>{item.service}</Text>

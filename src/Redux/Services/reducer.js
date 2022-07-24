@@ -1,4 +1,8 @@
-import { GET_ALLPRODUCT_DATA_FAILURE, GET_ALLPRODUCT_DATA_REQUEST, GET_ALLPRODUCT_DATA_SUCCESS } from "./action"
+import {
+  GET_ALLPRODUCT_DATA_FAILURE,
+  GET_ALLPRODUCT_DATA_REQUEST,
+  GET_ALLPRODUCT_DATA_SUCCESS,
+} from "./action";
 
 const initState = {
     loading: false,

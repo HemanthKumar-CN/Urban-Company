@@ -3,6 +3,7 @@ import React from "react";
 import HomePageCarousel from "./HomePageCarousel";
 import ServicesCategory from "../ServicesCategory";
 import styles from "../../StyleComponents/Home.module.css";
+import HomePageNav from "./HomePageNav";
 const cardData = [
   {
     logo: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/categories/category_v2/category_72d18950.png",
@@ -239,7 +240,7 @@ const homerepairs = [
   },
 ];
 
-const HomePageService = () => {
+const HomePageService = ({ scrollNav }) => {
   return (
     <Box>
       {/* HOME SERVICES CARDS */}
@@ -253,7 +254,7 @@ const HomePageService = () => {
       </Heading>
       <ServicesCategory data={cardData} />
       <Divider className={styles.dividers} />
-
+      {scrollNav>1000 ? <HomePageNav/> :""}
       {/* CAROUSAL */}
       <HomePageCarousel data={sliderData} hideArrow={false} />
       <Divider className={styles.dividers} />
