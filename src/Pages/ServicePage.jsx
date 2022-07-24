@@ -40,7 +40,7 @@ const ServicePage = () => {
          
     womensdata.Salon_for_women_data[0].package.map((val,index) =>{
       return(<>
-        <Box key={index} maxW='100px' borderWidth='1px' borderRadius='lg' overflow='hidden'>
+        <Box key={index} maxW='100px' borderWidth='1px' borderRadius='lg' overflow='hidden' margin="10px" marginBottom="30px">
         <Image src={val.img} borderRadius='lg' />
         <Heading as='h6' size='xs'>
       {val.para}
@@ -51,7 +51,8 @@ const ServicePage = () => {
     : ""}
     
     </Box>
-
+<Box height="500px" width="60%" border="1px solid red" overflow="auto">
+<Box  >
     {womensdata!=undefined? 
          
          womensdata.Salon_for_women_data[0].packages_components1.map((val,index) =>{
@@ -60,8 +61,10 @@ const ServicePage = () => {
            </>)
          })
          : ""}
+         </Box>
 {/* 
     <PackageContainer2/> */}
+    </Box>
    </div>; 
 };
 
