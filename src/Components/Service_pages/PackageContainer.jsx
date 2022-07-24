@@ -1,10 +1,23 @@
 import React from "react";
 import List from "./List";
 import { Heading,Button } from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
+import { addProducts } from "../../Redux/Services/action";
 export default function PackageContainer({ title, price, time, para }) {
   // console.log("para--",para)
+  const dispatch = useDispatch()
+
+  
+   
+
+
+  const handaleadd=(title,price,para,time)=>{
+const payload={title,price,time,para,id:"1",count:1}
+console.log(payload)
+dispatch(addProducts(payload))
+  }
   return (
-    <div style={{ width: "100%", border: "1px solid blue" }}>
+    <div style={{ width: "100%", border: "1px solid grey",marginBottom:"10px" ,borderRadius:"10px",padding:"30px"}}>
       <Heading as="h6" size="xs" color="rgb(6, 153, 163)">
         PACKAGE
       </Heading>
@@ -31,11 +44,13 @@ export default function PackageContainer({ title, price, time, para }) {
           <div style={{ display: "flex" }}>
             {" "}
             <p>{price}</p>
-            <List para={time} />
+            <List para={time}  textAlign="right"/>
           </div>
         </div>
         <div>
-          <button>add</button>
+        <Button colorScheme='blue' variant='outline'   onClick={()=>handaleadd(title,price,para,time)} >
+    Add
+  </Button>
         </div>
       </div>
 
