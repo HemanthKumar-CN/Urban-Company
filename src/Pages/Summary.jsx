@@ -1,4 +1,6 @@
+import axios from "axios";
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Model1 from "../Components/bookslots/Model1";
@@ -6,9 +8,18 @@ import styles from "../StyleComponents/Services.module.css";
 
 const Summary = () => {
   const navigate = useNavigate();
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const [price, setPrice] = useState(553);
 
+  const [data,setData]=useState([])
+
+  useEffect(()=>{
+    axios.get('http://localhost:8080/cart')
+    .then((r)=>setData(r.data))
+    .catch((e)=>console.log(e))
+  },[])
+
+  console.log(data,"data")
   const handleProcced = () => {
     navigate("/:city/summary/checkout");
   };

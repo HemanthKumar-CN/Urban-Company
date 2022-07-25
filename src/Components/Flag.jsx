@@ -64,7 +64,7 @@ const Flag = ({ setPhoneNumber }) => {
           <Select
             value={selectedCountry}
             onChange={(e) => setSelectedCountry(e.target.value)}
-            placeholder="Select City"
+            placeholder="Select Country"
             display={"flex"}
             alignItems={"end"}
           >

@@ -25,6 +25,7 @@ import { GrLocation } from "react-icons/gr";
 import ServicesCategory from "../ServicesCategory";
 import styles from "../../StyleComponents/Home.module.css";
 import { useThrottle } from "use-throttle";
+import { useNavigate } from "react-router-dom";
 
 const cardData = [
   {
@@ -55,7 +56,7 @@ const HomeTopSection = ({ loading, setLoading, onChange, suggestions }) => {
   const [active, setActive] = useState(0);
   const scrollRef = useRef();
   const throttledText = useThrottle(inputText, 1000);
-  
+  const navigate=useNavigate()
   useEffect(() => {
     onChange(throttledText);
   }, [throttledText, onChange]);
@@ -70,13 +71,10 @@ const HomeTopSection = ({ loading, setLoading, onChange, suggestions }) => {
   //   onChange("");
   //   setLoading(false);
   // };
-  const handleClick=(index)=>{
-    
-  }
+  
   const searchResult = (item) => {
-    console.log(item);
+    navigate(`/:city/${item}/services`)
   };
- 
 
   return (
     <Box>
@@ -201,8 +199,7 @@ const HomeTopSection = ({ loading, setLoading, onChange, suggestions }) => {
                     _hover={{ bgColor: "purple.100" }}
                     className={styles.suggestions}
                     onClick={() => {
-                      searchResult(item)
-                      handleClick(index)
+                      searchResult(index);
                     }}
                   >
                     {item}

@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 const ServicesCategory = ({ data }) => {
   const navigate = useNavigate();
-  const handleClick = () => {
-    navigate("/:city/services");
+  const handleClick = (index) => {
+    navigate(`/:city/${index}/services`);
   };
   return (
     <Container
@@ -19,7 +19,7 @@ const ServicesCategory = ({ data }) => {
       display="flex"
       zIndex={-1}
     >
-      {data.map((item) => (
+      {data.map((item,index) => (
         <Button
           h="80%"
           m="auto"
@@ -29,7 +29,7 @@ const ServicesCategory = ({ data }) => {
           justifyContent="space-around"
           fontSize={"15px"}
           key={item.service}
-          onClick={handleClick}
+          onClick={()=>handleClick(index)}
         >
           <Image src={item.logo} name={item.service} borderRadius />
           <Text>{item.service}</Text>

@@ -1,12 +1,12 @@
 import React from "react";
 import List from "./List";
-import { Heading,Button } from "@chakra-ui/react";
+import { Heading,Button, useToast } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { addProducts } from "../../Redux/Services/action";
 export default function PackageContainer({ title, price, time, para }) {
   // console.log("para--",para)
   const dispatch = useDispatch()
-
+const toast = useToast();
   
    
 
@@ -17,7 +17,15 @@ console.log(payload)
 dispatch(addProducts(payload))
   }
   return (
-    <div style={{ width: "100%", border: "1px solid grey",marginBottom:"10px" ,borderRadius:"10px",padding:"30px"}}>
+    <div
+      style={{
+        width: "100%",
+        border: "1px solid grey",
+        marginBottom: "10px",
+        borderRadius: "10px",
+        padding: "30px",
+      }}
+    >
       <Heading as="h6" size="xs" color="rgb(6, 153, 163)">
         PACKAGE
       </Heading>
@@ -25,11 +33,10 @@ dispatch(addProducts(payload))
         style={{
           display: "grid",
           gridTemplateColumns: "70% 30%",
-          
         }}
       >
         {" "}
-        <div style={{borderBottom: "1.5px solid rgb(15, 15, 15) ",}}>
+        <div style={{ borderBottom: "1.5px solid rgb(15, 15, 15) " }}>
           {" "}
           <Heading
             color="rgb(15, 15, 15)"
@@ -44,13 +51,31 @@ dispatch(addProducts(payload))
           <div style={{ display: "flex" }}>
             {" "}
             <p>{price}</p>
-            <List para={time}  textAlign="right"/>
+            <List para={time} textAlign="right" />
           </div>
         </div>
         <div>
-        <Button colorScheme='blue' variant='outline'   onClick={()=>handaleadd(title,price,para,time)} >
-    Add
-  </Button>
+          {/* <Button
+            colorScheme="blue"
+            variant="outline"
+            onClick={() => handaleadd(title, price, para, time)}
+          >
+            Add
+          </Button> */}
+          <Button
+            onClick={() =>
+             
+              toast({
+                title: "Product Added",
+                description: "We've added a package for you.",
+                status: "success",
+                duration: 2000,
+                isClosable: true,
+              })
+            }
+          >
+            Add
+          </Button>
         </div>
       </div>
 
@@ -66,9 +91,9 @@ dispatch(addProducts(payload))
           : ""}
 
         {/* <List /> */}
-        <Button colorScheme='black' variant='outline' >
-    Edit your package
-  </Button>
+        <Button colorScheme="black" variant="outline">
+          Edit your package
+        </Button>
       </div>
     </div>
   );
