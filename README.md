@@ -38,6 +38,7 @@ The cloned version is responsive as well.
 ## Tech Stacks Used:
 
 - React
+- Redux
 - Chakra UI
 - Firebase
 
